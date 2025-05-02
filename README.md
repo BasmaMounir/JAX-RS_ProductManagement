@@ -2,7 +2,7 @@
 
 ## 🛍️ Product Manager API
 
-This is a simple Java web project that allows you to manage products using Servlets and HTTP requests.
+This is a simple Java web project that allows you to manage products using JAX-RS and HTTP requests.
 
 ### 📦 Features
 
