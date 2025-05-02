@@ -1,9 +1,9 @@
 package org.example.jaxrsproductmanagement;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.validation.Valid;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +25,15 @@ public class ProductApp {
     @Produces(MediaType.APPLICATION_JSON)
     public  Map<Integer, Product> getProduct() {
         return products;
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response addProduct(@Valid Product product){
+        product = new Product(product.getName(), product.getPrice());
+        Product createdProduct = products.put(product.getId(), product);
+        return Response.ok(createdProduct).build();
     }
 
 }

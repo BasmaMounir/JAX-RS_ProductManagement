@@ -7,6 +7,9 @@ public class Product {
     private String name;
     private int price;
 
+    public Product() {
+    }
+
     public Product(String name, int price) {
         this.id =  counter++;
         this.name = name;
