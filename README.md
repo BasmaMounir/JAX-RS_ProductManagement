@@ -20,20 +20,20 @@ This is a simple Java web project that allows you to manage products using JAX-R
 
 ### 📄 GET All Products
 **Endpoint:**  
-`GET http://localhost:8080/product-manager/product
+`GET http://localhost:8080/product/api/productJax
 
 <img src="https://github.com/BasmaMounir/JakartaEEProductManagement/blob/development/images/get.png?raw=true" alt="Get" width="400"/>
 
 
 ### ➕ Add Product
 **Endpoint:**  
-`POST http://localhost:8080/product?name={productName},price={productPrice}`
+`POST http://localhost:8080/product/api/productJax?name={productName},price={productPrice}`
 
 <img src="https://github.com/BasmaMounir/JakartaEEProductManagement/blob/development/images/post.png?raw=true" alt="Add" width="400"/>
 
 ### 🗑️ Delete Product
 **Endpoint:**  
-`DELETE http://localhost:8080/product?id={productId}`
+`DELETE http://localhost:8080/product/api/productJax?id={productId}`
 **Query Parameter:**
 - `id` (int): ID of the product to delete
   
@@ -41,7 +41,7 @@ This is a simple Java web project that allows you to manage products using JAX-R
 
 ### ✏️ Update Product
 **Endpoint:**  
-`PUT http://localhost:8080/product?id={id}&name={newName}&price={newPrice}`
+`PUT http://localhost:8080/product/api/productJax?id={id}&name={newName}&price={newPrice}`
 **Query Parameters:**
 - `id` (int): ID of the product to update
 - `name` (String): New name
