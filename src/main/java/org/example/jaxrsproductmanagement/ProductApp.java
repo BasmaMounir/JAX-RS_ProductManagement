@@ -53,4 +53,16 @@ public class ProductApp {
         return Response.ok(existingProduct).build();
     }
 
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteProduct(@QueryParam("id") int id){
+        Product existingProduct = products.get(id);
+
+        if(existingProduct == null){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        products.remove(id);
+        return Response.ok("{\"message\": \"Product deleted successfully\"}").build();
+    }
+
 }
