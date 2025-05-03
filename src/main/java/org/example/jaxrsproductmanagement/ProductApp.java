@@ -36,4 +36,21 @@ public class ProductApp {
         return Response.ok(createdProduct).build();
     }
 
+    @PUT
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateProduct(@Valid Product product,@PathParam("id") int id){
+        Product existingProduct = products.get(id);
+        if(existingProduct == null){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        else {
+            existingProduct.setName(product.getName());
+            existingProduct.setPrice(product.getPrice());
+        }
+
+        return Response.ok(existingProduct).build();
+    }
+
 }
